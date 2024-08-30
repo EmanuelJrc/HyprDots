@@ -228,7 +228,7 @@
         "exec-if": "ping wttr.in -c1"
     },
     "idle_inhibitor": {
-        "format": " ", //{icon}
+        "format": "⏻ ", //{icon}
         "format-icons": {
             "activated": "",
             "deactivated": ""
@@ -237,9 +237,11 @@
         "tooltip": false
     },
     "custom/logo": {
-        "format": "",
-        "on-click": "rofi -show powermenu -modi powermenu:~/.scripts/rofi-powermenu -config ~/.config/rofi/powermenu.rasi",
-        "tooltip-format": "Arch Linux"
+        "format": "⏻ ",
+        "exec": "~/.config/wlogout/Wlogout.sh",
+        "on-click": "wlogout",
+        "interval" : 86400, // once every day
+        "tooltip": true,
     },
     "custom/notification": {
         "format": "",
@@ -260,5 +262,6 @@
     "custom/seperator":{
         "format": "|",
         "tooltip": false
-    }
+    },
+
 }
