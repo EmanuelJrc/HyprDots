@@ -43,7 +43,7 @@
     "custom/logo": {
         "format": " ",
         "on-click": "wofi",
-		"on-click-right": "kill wofi"
+		"on-click-right": "pkill wofi"
     },
 	"custom/workspaces": {
 		"exec": "/home/luffy/.config/waybar/w2.sh",
@@ -84,8 +84,7 @@
 			]
 		},
 		"scroll-step": 5,
-		"on-click": "pavucontrol",
-		"on-click-right": "pamixer -t"
+		"on-click": "pavucontrol"
 	},
 	"battery": {
 		"states": {

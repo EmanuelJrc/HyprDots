@@ -1,4 +1,4 @@
-# Hyperland dots
+# Hyprland Dotfiles
 
 > [!IMPORTANT]
 > _This repository also includes custom scripts that I use for various tasks, such as checking updates, displaying the current playing song, changing the playing song, and switching wallpapers in Hyprland using keyboard shortcuts._  
@@ -22,15 +22,15 @@
 ### 🔧 _Necessary_
 * Editor _(CLI)_ - [neovim](https://github.com/neovim/neovim)
 * Editor - [VS Code](https://github.com/microsoft/vscode)
+* Widgets - [eww](https://github.com/elkowar/eww)
+* Wallpaper daemon - [swww](https://github.com/LGFae/swww)
 * PDF Reader - [zathura](https://github.com/pwmt/zathura)
 * Browser - [Firefox](https://www.mozilla.org/en-US/firefox/linux/) - [Firefox-Mod-Blur](https://github.com/datguypiko/Firefox-Mod-Blur)
 * Media Player - [mpv](https://github.com/mpv-player/mpv)
 
 ### 🌟 _Useful_
-* Widgets - [eww](https://github.com/elkowar/eww)
-* Wallpaper daemon - [swww](https://github.com/LGFae/swww)
 * GUI File Manager - [nemo](https://github.com/linuxmint/nemo)
-* System Info - [neofetch](https://github.com/dylanaraps/neofetch), [fastfetch](https://github.com/fastfetch-cli/fastfetch)
+* System Info - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 
 ### ⚙️ _Other Components_
 
@@ -45,3 +45,10 @@
 - _`nmcli`_ - Connection Manager
 - _`Eza`_ - Alternative to _`ls`_ command
 - _`ianny`_ - Save me from myself
+
+# ❤️ Hope you like it !!
+
+# References and Inspiration
+#### https://github.com/Pahasara/HyprDots/
+#### https://github.com/JaKooLit/Hyprland-Dots
+#### https://github.com/arfan-on-clouds/hyprclouds
