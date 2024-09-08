@@ -1,0 +1,125 @@
+#!/bin/bash
+
+## Get data
+COVER="/tmp/.music_cover.jpg"
+DEFAULT_COVER="images/music.png"  # Path to a default cover image if none is found
+
+## Get status
+get_status() {
+    status=$(playerctl --player=spotify status 2>/dev/null)
+    if [[ $status == "Playing" ]]; then
+        echo ""  # Icon for playing
+    else
+        echo ""  # Icon for paused
+    fi
+}
+
+## Get song
+get_song() {
+    song=$(playerctl --player=spotify metadata title 2>/dev/null)
+    if [[ -z "$song" ]]; then
+        echo "Offline"
+    else
+        echo "$song"
+    fi
+}
+
+## Get artist
+get_artist() {
+    artist=$(playerctl --player=spotify metadata artist 2>/dev/null)
+    if [[ -z "$artist" ]]; then
+        echo "Offline"
+    else
+        echo "$artist"
+    fi
+}
+
+## Get time
+get_time() {
+    # Retrieve position and duration in microseconds
+    time=$(playerctl --player=spotify position 2>/dev/null)
+    duration=$(playerctl --player=spotify metadata mpris:length 2>/dev/null)
+
+    # Debug output
+    echo "Position: $time microseconds"
+    echo "Duration: $duration microseconds"
+
+    # Check if either value is empty or zero
+    if [[ -z "$time" || -z "$duration" || "$duration" -eq 0 ]]; then
+        echo "0%"
+        return
+    fi
+
+    # Convert microseconds to seconds
+    time_sec=$(echo "scale=2; $time / 1000000" | bc)
+    duration_sec=$(echo "scale=2; $duration / 1000000" | bc)
+
+    # Handle case where duration is zero to avoid division by zero
+    if (( $(echo "$duration_sec == 0" | bc -l) )); then
+        echo "0%"
+        return
+    fi
+
+    # Calculate percentage
+    percentage=$(echo "scale=2; ($time_sec / $duration_sec) * 100" | bc)
+
+    # Output percentage rounded to integer
+    echo "$(printf "%.0f" $percentage)%"
+}
+
+
+## Get current time
+get_ctime() {
+    ctime=$(playerctl --player=spotify position 2>/dev/null | awk '{print int($1/60000000)":"int($1/1000000)%60}')
+    if [[ -z "$ctime" ]]; then
+        echo "0:00"
+    else
+        echo "$ctime"
+    fi
+}
+
+## Get total time
+get_ttime() {
+    ttime=$(playerctl --player=spotify metadata mpris:length 2>/dev/null | awk '{print int($1/60000000)":"int($1/1000000)%60}')
+    if [[ -z "$ttime" ]]; then
+        echo "0:00"
+    else
+        echo "$ttime"
+    fi
+}
+
+## Get cover
+get_cover() {
+    url=$(playerctl --player=spotify metadata mpris:artUrl 2>/dev/null)
+    if [[ -z "$url" ]]; then
+        echo "$DEFAULT_COVER"
+    else
+        curl -s "$url" -o "$COVER"
+        echo "$COVER"
+    fi
+}
+
+## Execute accordingly
+if [[ "$1" == "--song" ]]; then
+    get_song
+elif [[ "$1" == "--artist" ]]; then
+    get_artist
+elif [[ "$1" == "--status" ]]; then
+    get_status
+elif [[ "$1" == "--time" ]]; then
+    get_time
+elif [[ "$1" == "--ctime" ]]; then
+    get_ctime
+elif [[ "$1" == "--ttime" ]]; then
+    get_ttime
+elif [[ "$1" == "--cover" ]]; then
+    get_cover
+elif [[ "$1" == "--toggle" ]]; then
+    playerctl --player=spotify play-pause
+elif [[ "$1" == "--next" ]]; then
+    playerctl --player=spotify next
+    get_cover
+elif [[ "$1" == "--prev" ]]; then
+    playerctl --player=spotify previous
+    get_cover
+fi

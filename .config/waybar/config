@@ -25,14 +25,6 @@
 
 	],
 
-	"custom/spotify": {
-        "interval": 1,
-        "exec": "~/.scripts/now-playing",
-        "on-click": "~/.scripts/play-next",
-        "on-click-right": "~/.scripts/play-previous",
-        "escape": true
-    },
-
 	"group/hardware": {
 		"orientation": "horizontal",
 		"modules": [
@@ -48,40 +40,16 @@
 			"network"
 		]
 	},
-	"idle_inhibitor": {
-        "format": "", //{icon}
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        },
-        "timeout": 60.0,
-        "tooltip": false
-    },
     "custom/logo": {
         "format": " ",
-        "on-click": "wofi --show=drun",
-        "tooltip-format": "Arch Linux"
+        "on-click": "wofi",
+		"on-click-right": "kill wofi"
     },
 	"custom/workspaces": {
 		"exec": "/home/luffy/.config/waybar/w2.sh",
 		"interval": 1,
 		"tooltip": false,
 		"tooltip-format": "Workspaces"
-	},
-	"custom/cpuicon": {
-		"format": " ",
-		"tooltip": false,
-		"tooltip-format": "CPU usage"
-	},
-	"custom/memicon": {
-		"format": "    m   ",
-		"tooltip": "Memory usage"
-	},
-	"custom/memicon1": {
-		"format": "     ",
-		"tooltip": false,
-		"tooltip-format": "Memory usage",
-		
 	},
 	"custom/space": {
 		"format": " ",
@@ -118,15 +86,6 @@
 		"scroll-step": 5,
 		"on-click": "pavucontrol",
 		"on-click-right": "pamixer -t"
-	},
-	"memory": {
-		"interval": 5,
-		"format": "{}%"
-	},
-	"cpu": {
-		"interval": 5,
-		"on-click": "emacsclient -c -e '(proced)'",
-		"format": "{usage:2}%"
 	},
 	"battery": {
 		"states": {

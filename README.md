@@ -22,21 +22,19 @@
 ### 🔧 _Necessary_
 * Editor _(CLI)_ - [neovim](https://github.com/neovim/neovim)
 * Editor - [VS Code](https://github.com/microsoft/vscode)
-* Clipboard Manager - [cliphist](https://github.com/sentriz/cliphist)
-* File Manager _(CLI)_ - [ranger](https://github.com/ranger/ranger)
 * PDF Reader - [zathura](https://github.com/pwmt/zathura)
-* Browser - [Firefox](https://www.mozilla.org/en-US/firefox/linux/)
+* Browser - [Firefox](https://www.mozilla.org/en-US/firefox/linux/) - [Firefox-Mod-Blur](https://github.com/datguypiko/Firefox-Mod-Blur)
 * Media Player - [mpv](https://github.com/mpv-player/mpv)
 
 ### 🌟 _Useful_
 * Widgets - [eww](https://github.com/elkowar/eww)
 * Wallpaper daemon - [swww](https://github.com/LGFae/swww)
 * GUI File Manager - [nemo](https://github.com/linuxmint/nemo)
-* System Info - [neofetch](https://github.com/dylanaraps/neofetch) , [fastfetch](https://github.com/fastfetch-cli/fastfetch)
+* System Info - [neofetch](https://github.com/dylanaraps/neofetch), [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 
 ### ⚙️ _Other Components_
 
-- _`Fonts`_ - Caskaydia Mono Nerd Fonts, JetBrains Mono Nerd Fonts, Ubuntu Nerd Fonts, noto-fonts-cjk and Awesome Fonts
+- _`Fonts`_ - Caskaydia Mono Nerd Fonts, JetBrains Mono Nerd Fonts, Ubuntu Nerd Fonts, noto-fonts-cjk and Awesome Fonts - _`Font Manager`_
 - _`vesktop`_ - Discord Client
 - _`spicetify`_ - Spotify Customizer
 - _`LibreOffice`_ - Alternative to MSOffice package

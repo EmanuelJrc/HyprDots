@@ -1,9 +1,10 @@
 
+
 #window {
     margin: 0px;
     border-radius: 20px;
     background-color: #1d2021;
-    color: #83a598;
+    color:  /*rgb(235, 77, 129)*/ #83a598;
 }
 
 #input {
@@ -23,6 +24,7 @@
 }
 
 #entry:selected {
+    /*background-color: /*rgb(245, 98, 36);*/
     background-color: #3c3836;
     border-radius: 10px;
     border: none;
@@ -33,6 +35,9 @@
     margin-left: 16px;
 }
 
+
 #entry image {
     padding-right: 10px;
 }
+
+

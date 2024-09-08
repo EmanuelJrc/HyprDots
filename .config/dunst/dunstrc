@@ -97,4 +97,4 @@
 
 [play_sound]
     msg_urgency = "normal"
-    script = /home/luffy/.scripts/play-notify-sound
+    script = $HOME/.scripts/play-notify-sound
